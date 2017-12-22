@@ -1,0 +1,117 @@
+<nav class="blue-grey darken-4" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="index.html" class="center brand-logo">ProBet 24</a>
+    <ul class="left hide-on-med-and-down">
+      <!--li><a href="#"><i class="tiny material-icons">home</i></a></li-->
+      <li><a href="#">О НАС</a></li>
+      <li><a href="#">ПОМОЩЬ</a></li>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li><a ng-click="$ctrl.goToLoginPage()" class="white waves-effect waves-yellow btn-flat">ВОЙТИ</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">ВОЙТИ</a></li>
+      <li><a href="#">РЕГИСТРАЦИЯ</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Помощь</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<div class="container registration">
+  <div class="section">
+    <div class="row">
+      <div class="col m3">
+      </div>
+      <div class="col s12 m6">
+        <div class="reg-wrapper z-depth-1">
+          <h1>Регистрация</h1>
+
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s4">
+                  <input id="last_name" type="text" ng-model="$ctrl.userRegData.lastName" class="validate">
+                  <label for="last_name">Фамилия</label>
+                </div>
+                <div class="input-field col s4">
+                  <input id="first_name" type="text" ng-model="$ctrl.userRegData.firstName" class="validate">
+                  <label for="first_name">Имя</label>
+                </div>
+                <div class="input-field col s4">
+                  <input id="fathers_name" type="text" ng-model="$ctrl.userRegData.fathersName" class="validate">
+                  <label for="fathers_name">Отчество</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="phone" type="text" ng-model="$ctrl.userRegData.phone" class="validate">
+                  <label for="phone">Телефон</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="login" type="text" ng-model="$ctrl.userRegData.login" class="validate">
+                  <label for="login">Логин</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" ng-model="$ctrl.userRegData.email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" ng-model="$ctrl.userRegData.password" class="validate">
+                  <label for="password">Пароль</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password2" type="password" class="validate">
+                  <label for="password2">Повторите пароль</label>
+                </div>
+              </div>
+
+              <div class="row checkrules">
+                <input type="checkbox" id="test6" checked="checked" />
+                <label for="test6">Подтверждаю, что ознакомлен и согласен с Правилами сайта, Политикой в отношении обработки персональных данных. Выражаю свое согласие на обработку моих персональных данных и на получение информационных сообщений</label>
+                <br/><br/>
+                <a href="index_loged.html" ng-click="$ctrl.onRegister()" class="waves-effect waves-light amber darken-2 btn-large">Зарегистрироваться</a>
+                <span style="margin: 0 15px;">или</span>
+                <a ng-click="$ctrl.goToLoginPage()" class="waves-effect waves-light  blue-grey lighten-5 btn" style="color: #666">Войти</a>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col s12 m2 l2"></div> -->
+      <div class="col s12 m10 l12">
+        <div class="blue-grey darken-2" style="padding: 10px 20px;">
+          <div class="left">
+            <img class="icon" src="img/spartak.png">
+            <img class="icon" src="img/sportexpress.png">
+            <img class="icon" src="img/sportfm.png">
+            <img class="icon" src="img/sports.png">
+          </div>
+          <div class="right">
+            <img class="icon" src="img/qiwi.png">
+          </div>
+          <div class="clearfix">
+            <p class="copyright" style="font-size: .7em;">Посетитель сайта выражает согласие на обработку его персональных данных в соответствии с Политикой в отношении файлов cookie</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,152 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+body {
+  background-color: #8f949a;
+}
+
+.container { min-width: 1200px; }
+
+nav ul a,
+nav .brand-logo {
+  color: #fff;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #000;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+
+footer.page-footer {
+  margin: 0;
+}
+
+/* Header */
+.deposit { padding: 0 10px; }
+.balance { font-size: 12px; line-height: 20px; padding: 12px 14px; }
+.myaccount li a { color: #263238; }
+/* Footer */
+
+footer { color: #78909c; }
+footer .icon { display: inline-block; text-align: center; vertical-align: middle; margin-right: 20px; }
+
+
+
+
+
+
+/* Frontpage */
+
+
+.country { background-color: #fff; overflow: hidden; margin-bottom: 10px; }
+.country .name { padding: 8px 20px; background-color: #b0bec5; cursor: pointer; }
+.country .name:hover { background-color: #cfd8dc; }
+
+.country .leagues { color: #666; font-size: .85em; }
+.country .leagues ul { margin: 0; }
+.country .leagues ul li { margin: 4px 0; }
+.country .leagues ul li a { color: #666; }
+
+
+.gamelist .gametype { color: white; display: inline-block; height: 40px; line-height: 40px;  padding: 0 15px; }
+.gamelist .gametype:first-child { margin-left: 10px; }
+.gamelist .gametype a { color: #dbdbdb; text-decoration: underline; }
+.gamelist .gametype a:hover { color: white; }
+.gamelist .gametype.active { background: white; color: #333; }
+
+.leagues { overflow: hidden; padding: 10px 20px;}
+.league { margin-top: 10px; font-weight: bold; text-transform: uppercase; color: #444; clear: both; border-bottom: 1px dotted #ccc; margin-bottom: 2px; padding-bottom: 10px;}
+
+.games { font-size: .88em; line-height: 40px; border-bottom: 1px dotted #ccc;}
+.games .datetime { white-space: nowrap; float: left; margin-left: 1.6em; }
+.games .datetime .date, .games .datetime .time { margin-right: 1.6em; }
+.games .members { white-space: nowrap; float: left; min-width: 300px; font-weight: bold; }
+.games .bet1x2 { white-space: nowrap; float: left; min-width: 175px; }
+
+.games .bet { display: inline-block; border: 1px solid #bdbdbd; text-align: center; font-weight: bold; line-height: 1.5em; white-space: nowrap; }
+.games a .bet { color: #333; }
+.games .bet1x2 .bet {  width: 50px; }
+.games .betscore { position: relative; }
+.games .betscore .bet {  width: 120px; font-weight: normal; }
+.games .betscore .bet .material-icons { font-size: 1.5em; margin-left: 0px;}
+
+.games .bet1x2 .bet,
+.games .betscore .bet {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f5f6+0,e3eaed+37,c8d7dc+100;Grey+3D+%234 */
+  background: rgb(242,245,246); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+}
+
+.games .bet1x2 .bet:hover,
+.games .betscore .bet:hover {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1e767+0,feb645+100;Yellow+3D */
+  background: rgb(241,231,103); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 ); /* IE6-9 */
+}
+
+
+.betscore .variants { position: absolute; z-index: 1; right: 20px; top: 30px;
+  box-sizing: border-box; background: #fff; line-height: 24px; width: 222px; padding: 5px 20px 20px; overflow: hidden; border: 1px solid #cfd8dc; margin-bottom: 10px; }
+.betscore .variants .betg { width: 60px; float: left; text-align: center; }
+
+.betscore .variants .bet { margin: 0; line-height: 20px; width: 58px; color: #0091ea ; }
+.betscore .variants .bet .kef { font-weight: bold; margin-left: 5px; color: #000; }
+.betscore .variants .member-short { color: #546e7a; font-weight: bold; display: inline-block; width: 20px; font-size: .8em; }
+
+
+/* Registration */
+
+.registration h1 { font-size: 2em; text-align: center; font-weight: 600; }
+.registration h2 { font-size: 1.6em; text-align: center; font-weight: 600; }
+.registration .reg-wrapper { background-color: #fff; padding: 10px 40px 40px; }
+.registration .row { margin-bottom: 0; }
+.checkrules label { font-size: .8rem; line-height: 1rem; }
+
+/* Deposit */
+
+.payment-type { font-weight: bold; color: #000; }
+.payment-type .desc { font-size: 12px; font-weight: normal;}
+
+
+.info-lable { min-width: 160px; display: inline-block; }
