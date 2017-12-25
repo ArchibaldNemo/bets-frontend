@@ -30,8 +30,14 @@ class LoginPageController {
         headers: { "Content-Type": "application/json" }})
       .then((response) => {
         console.log('TOKEN=', response.data.token);
-        localStorage.setItem('token', response.data.token);
-        this.goToMainPage();
+        if(response.data.token) {
+          localStorage.setItem('token', response.data.token);
+          this.goToMainPage();
+        }
+        else {
+          alert('Такого пользователя не существует!');
+        }
+
       })
       .catch((error) => console.log('ERROR=', error));
   }

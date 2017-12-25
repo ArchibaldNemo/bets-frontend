@@ -15,7 +15,7 @@ let mainPageModule = angular.module('mainPage', [
 
   $stateProvider
     .state('mainPage', {
-      url: '/bets',
+      url: '/',
       component: 'mainPage'
     });
 })

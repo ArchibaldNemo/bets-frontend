@@ -15,7 +15,7 @@ let loginPageModule = angular.module('loginPage', [
 
   $stateProvider
     .state('loginPage', {
-      url: '/login',
+      url: '/',
       component: 'loginPage'
     });
 })

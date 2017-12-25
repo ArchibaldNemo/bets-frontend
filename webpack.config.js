@@ -10,7 +10,7 @@ var setupAPI = function() {
       apiHost = 'http://128.199.44.106:3111';
       break;
     case 'development' :
-      apiHost = 'http://localhost:3111';
+      apiHost = 'http://localhost:3112';
       break;
   }
 

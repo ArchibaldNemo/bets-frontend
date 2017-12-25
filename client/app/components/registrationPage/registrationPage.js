@@ -15,7 +15,7 @@ let registrationPageModule = angular.module('registrationPage', [
 
   $stateProvider
     .state('registrationPage', {
-      url: '/registration',
+      url: '/',
       component: 'registrationPage'
     });
 })
