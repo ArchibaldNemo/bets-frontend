@@ -1,6 +1,7 @@
 class RegistrationPageController {
   constructor($state, $http) {
     'ngInject';
+    this.hostUrl = _API_;
     this.$state = $state;
     this.$http = $http;
     this.userRegData = {};
@@ -13,7 +14,7 @@ class RegistrationPageController {
   onRegister() {
     this.$http({
       method: "POST",
-      url: 'http://localhost:3111/user',
+      url: `${this.hostUrl}/user`,
       dataType: 'json',
       data: { "firstName": this.userRegData.firstName,
               "lastName": this.userRegData.lastName,
