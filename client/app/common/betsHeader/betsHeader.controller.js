@@ -13,6 +13,7 @@ class BetsHeaderController {
   logout() {
     localStorage.removeItem('token');
     this.$rootScope.user = {'logged' : false};
+    this.goToPage('homePage');
   }
 
 }

@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1a0de6-7181-41dd-b118-579f22393e8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/app.html" afterPath="$PROJECT_DIR$/client/app/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/app.js" afterPath="$PROJECT_DIR$/client/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/common.js" afterPath="$PROJECT_DIR$/client/app/common/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/components.js" afterPath="$PROJECT_DIR$/client/app/components/components.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/homePage/homePage.html" afterPath="$PROJECT_DIR$/client/app/components/homePage/homePage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/loginPage/loginPage.controller.js" afterPath="$PROJECT_DIR$/client/app/components/loginPage/loginPage.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/loginPage/loginPage.html" afterPath="$PROJECT_DIR$/client/app/components/loginPage/loginPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/mainPage/mainPage.controller.js" afterPath="$PROJECT_DIR$/client/app/components/mainPage/mainPage.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/mainPage/mainPage.html" afterPath="$PROJECT_DIR$/client/app/components/mainPage/mainPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/registrationPage/registrationPage.controller.js" afterPath="$PROJECT_DIR$/client/app/components/registrationPage/registrationPage.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/registrationPage/registrationPage.html" afterPath="$PROJECT_DIR$/client/app/components/registrationPage/registrationPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.controller.js" afterPath="$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.html" afterPath="$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.html" />
     </list>
     <ignored path="Bets.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,8 +88,8 @@
       <file leaf-file-name="betsHeader.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
+            <state relative-caret-position="288">
+              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -454,12 +442,12 @@
       <workItem from="1514289190989" duration="6738000" />
       <workItem from="1514314037816" duration="5184000" />
       <workItem from="1514369034501" duration="17389000" />
-      <workItem from="1514399651829" duration="4228000" />
+      <workItem from="1514399651829" duration="4821000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82933000" />
+    <option name="totallyTimeSpent" value="83526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -820,17 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/loginPage/loginPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="102" selection-start-line="15" selection-start-column="102" selection-end-line="15" selection-end-column="102" />
-          <folding>
-            <marker date="1514401025452" expanded="true" signature="891:1120" placeholder="{...}" />
-            <marker date="1514401025452" expanded="true" signature="1553:1724" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/registrationPage/registrationPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -847,18 +824,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/loginPage/loginPage.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="35" column="40" selection-start-line="34" selection-start-column="10" selection-end-line="35" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/loginPage/loginPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="102" selection-start-line="15" selection-start-column="102" selection-end-line="15" selection-end-column="102" />
+          <folding>
+            <marker date="1514401025452" expanded="true" signature="891:1120" placeholder="{...}" />
+            <marker date="1514401025452" expanded="true" signature="1553:1724" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/common/betsHeader/betsHeader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
           <folding />
         </state>
       </provider>
