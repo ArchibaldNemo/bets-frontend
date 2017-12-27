@@ -1,0 +1,96 @@
+<div class="container registration">
+  <div class="section">
+    <div class="row">
+      <div class="col m2">
+      </div>
+      <div class="col s12 m8">
+        <div class="reg-wrapper z-depth-1">
+          <h1>Вывод средств</h1>
+
+          <div class="row">
+            <div class="col s12">
+              <ul tabs class="tabs tabs-fixed-width">
+                <li class="tab col s3"><a class="active" href="#test1">Заявка на вывод</a></li>
+                <li class="tab col s3"><a href="#test2">Активные заявки</a></li>
+                <li class="tab col s3"><a href="#test3">История заявок</a></li>
+              </ul>
+            </div>
+            <div id="test1" class="col s12">
+              <h2>Оставить заявку на вывод средств</h2>
+              <form class="col s12">
+                <div class="row">
+                  <div class="col s12">
+                    Доступно к выводу: 1000 RUB
+                    <p>1. Выберите способ вывода:</p>
+                    <p>
+                      <input name="group1" type="radio" id="qiwi" checked="checked" />
+                      <label class="payment-type" for="qiwi">на QIWI</span><br><span class="desc"></span></label>
+                    </p>
+                    <p>
+                      <input name="group1" type="radio" id="visa" />
+                      <label class="payment-type" for="visa">на карту VISA/Mastercard<br/> <span class="desc"></span></label>
+                    </p>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12">
+                    2.
+                    <div class="input-field inline">
+                      <input id="summ" type="text" class="validate">
+                      <label for="summ">Сумма вывода</label>
+                    </div>
+                    RUB
+                  </div>
+                  <div class="col s12">
+                    3.
+                    <div class="input-field inline">
+                      <input id="summ" type="text" class="validate" >
+                      <label for="summ">Телефон / номер карты</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row checkrules">
+                  <div class="col s12">
+                    <input type="checkbox" id="test6" checked="checked" />
+                    <label for="test6">Подтверждаю, что ознакомлен и согласен с Правилами сайта, Политикой в отношении обработки персональных данных. Выражаю свое согласие на обработку моих персональных данных и на получение информационных сообщений</label>
+                    <a href="#" class="waves-effect waves-light amber darken-2 btn-large">Оставить заявку на вывод</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div id="test2" class="col s12">
+              <h2>Заявки на рассмотрении</h2>
+              На данный момент нет активных заявок
+            </div>
+
+            <div id="test3" class="col s12">
+              <h2>История</h2>
+              <table>
+                <thead>
+                <tr>
+                  <th>Дата заявки</th>
+                  <th>Сумма</th>
+                  <th>Способ</th>
+                  <th>Статус</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                  <td>20/06/17</td>
+                  <td>1000 RUB</td>
+                  <td>Qiwi</td>
+                  <td>Готово</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<nav class="blue-grey darken-4" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="center brand-logo">
+      <img src="img/logo.png" ng-show="$ctrl.$state.current.name == 'homePage'">
+      <span ng-show="$ctrl.$state.current.name != 'homePage'">ProBet 24</span>
+    </a>
+
+    <ul class="left hide-on-med-and-down">
+      <!--li><a href="#"><i class="tiny material-icons">home</i></a></li-->
+      <li><a href="#">О НАС</a></li>
+      <li><a href="#">ПОМОЩЬ</a></li>
+
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li ng-show="['homePage','registrationPage'].includes($ctrl.$state.current.name)">
+        <a ng-click="$ctrl.goToPage('registrationPage')"
+           class="waves-effect waves-light btn amber darken-2">Регистрация</a>
+      </li>
+      <li>
+        <a href="login.html"
+           class="white waves-effect waves-yellow btn-flat"
+           ng-show="['homePage','loginPage'].includes($ctrl.$state.current.name)"
+           ng-click="$ctrl.goToPage('loginPage')">ВОЙТИ</a>
+      </li>
+    </ul>
+
+    <ul class="right hide-on-med-and-down" ng-show="$ctrl.$rootScope.user.logged">
+      <li class="balance">
+        <div>Баланс: 0 руб.</div>
+        <div>В игре: 1000 руб.</div>
+      </li>
+      <li><a ng-click="$ctrl.goToPage('depositPage')" class="waves-effect waves-light btn amber darken-2 deposit"><i class="left material-icons">credit_card</i>Пополнить</a></li>
+      <li>
+        <a dropdown
+           class='dropdown-button'
+           href='#' data-activates='dropdown1'
+           data-hover='true'
+           data-belowOrigin="true"
+           data-constrainWidth='false'>МОЙ СЧЕТ<i class="right material-icons">arrow_drop_down</i>
+        </a>
+      </li>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content myaccount'>
+        <li><a ng-click="$ctrl.goToPage('accountPage')">Личный кабинет</a></li>
+        <li><a ng-click="$ctrl.goToPage('historyPage')">История пари</a></li>
+        <li class="divider"></li>
+        <li><a ng-click="$ctrl.goToPage('depositPage')">Пополнить счет</a></li>
+        <li><a ng-click="$ctrl.goToPage('withdrawPage')">Вывести средства</a></li>
+        <li class="divider"></li>
+        <li><a ng-click="$ctrl.goToPage('homePage')">Выход</a></li>
+      </ul>
+    </ul>
+
+  <ul id="nav-mobile" class="side-nav">
+    <li><a href="#" ng-click="$ctrl.goToPage('loginPage')"
+           ng-show="['homePage','loginPage'].includes($ctrl.$state.current.name)">ВОЙТИ</a>
+    </li>
+    <li><a href="#" ng-click="$ctrl.goToPage('registrationPage')"
+           ng-show="['homePage','registrationPage'].includes($ctrl.$state.current.name)">РЕГИСТРАЦИЯ</a>
+    </li>
+    <li><a href="#">О нас</a></li>
+    <li><a href="#">Помощь</a></li>
+  </ul>
+  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+</div>
+</nav>
+
+<!--nav class="blue-grey darken-4" role="navigation">
+<div class="nav-wrapper container">
+  <a id="logo-container" href="#" class="center brand-logo">ProBet 24</a>
+  <ul class="left hide-on-med-and-down">
+    <!--li><a href="#"><i class="tiny material-icons">home</i></a></li-->
+      <!--li><a href="#">О НАС</a></li>
+      <li><a href="#">ПОМОЩЬ</a></li>
+    </ul>
+
+    <!--ul class="right hide-on-med-and-down">
+      <li class="balance">
+        <div>Баланс: 0 руб.</div>
+        <div>В игре: 1000 руб.</div>
+      </li>
+      <li><a href="deposit.html" class="waves-effect waves-light btn amber darken-2 deposit"><i class="left material-icons">credit_card</i>Пополнить</a></li>
+      <li>
+        <a dropdown
+           class='dropdown-button'
+           href='#' data-activates='dropdown1'
+           data-hover='true'
+           data-belowOrigin="true"
+           data-constrainWidth='false'>МОЙ СЧЕТ<i class="right material-icons">arrow_drop_down</i>
+        </a>
+      </li>
+      <!-- Dropdown Structure -->
+      <!--ul id='dropdown1' class='dropdown-content myaccount'>
+        <li><a href="account.html">Личный кабинет</a></li>
+        <li><a href="history.html">История пари</a></li>
+        <li class="divider"></li>
+        <li><a href="deposit.html">Пополнить счет</a></li>
+        <li><a href="withdraw.html">Вывести средства</a></li>
+        <li class="divider"></li>
+        <li><a href="index.html">Выход</a></li>
+      </ul>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">ВОЙТИ</a></li>
+      <li><a href="#">РЕГИСТРАЦИЯ</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Помощь</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav-->

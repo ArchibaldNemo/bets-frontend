@@ -3,12 +3,14 @@ import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+import materialize from 'angular-materialize';
 //import 'normalize.css';
 
 angular.module('app', [
     uiRouter,
     Common,
-    Components
+    Components,
+    materialize
   ])
   .config(($locationProvider) => {
     "ngInject";

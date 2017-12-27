@@ -1,7 +1,8 @@
 import angular from 'angular';
-let commonModule = angular.module('app.common', [
- 
-])
+import betsFooter from './betsFooter/betsFooter';
+import betsHeader from './betsHeader/betsHeader';
+
+let commonModule = angular.module('app.common', [betsFooter, betsHeader])
 
 .name;
 

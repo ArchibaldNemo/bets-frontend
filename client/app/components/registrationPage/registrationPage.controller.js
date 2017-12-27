@@ -11,7 +11,9 @@ class RegistrationPageController {
     this.$state.go('loginPage');
   }
 
-  onRegister() {
+  onRegister(isValid) {
+    console.log('isValid=',isValid);
+    if(!isValid) return;
     this.$http({
       method: "POST",
       url: `${this.hostUrl}/user`,
@@ -20,8 +22,7 @@ class RegistrationPageController {
               "lastName": this.userRegData.lastName,
               "fathersName": this.userRegData.fathersName,
               "phone": this.userRegData.phone,
-              "login": this.userRegData.login,
-              "email": this.userRegData.email,
+              "email": this.userRegData.email.toLowerCase(),
               "password": this.userRegData.password},
       headers: { "Content-Type": "application/json" }})
     .then((response) => {
