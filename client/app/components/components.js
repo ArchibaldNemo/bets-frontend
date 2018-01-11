@@ -1,7 +1,6 @@
 import angular from 'angular';
 import LoginPage from './loginPage/loginPage';
 import HomePage from './homePage/homePage';
-import MainPage from './mainPage/mainPage';
 import RegistrationPage from './registrationPage/registrationPage';
 import AccountPage from './accountPage/accountPage';
 import HistoryPage from './historyPage/historyPage';
@@ -14,7 +13,6 @@ let componentModule = angular.module('app.components', [
   HomePage,
   RegistrationPage,
   LoginPage,
-  MainPage,
   AccountPage,
   HistoryPage,
   DepositPage,

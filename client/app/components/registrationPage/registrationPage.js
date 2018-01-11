@@ -15,8 +15,11 @@ let registrationPageModule = angular.module('registrationPage', [
 
   $stateProvider
     .state('registrationPage', {
-      url: '/',
-      component: 'registrationPage'
+      url: '/signup',
+      component: 'registrationPage',
+      data: {
+        'noLogin': true
+      }
     });
 })
 

@@ -15,8 +15,11 @@ let withdrawPageModule = angular.module('withdrawPage', [
 
   $stateProvider
     .state('withdrawPage', {
-      url: '/',
-      component: 'withdrawPage'
+      url: '/withdraw',
+      component: 'withdrawPage',
+      data: {
+        'noLogin': false
+      }
     });
 })
 

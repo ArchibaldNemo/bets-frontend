@@ -6,7 +6,7 @@ class LoginPageController {
     this.$http = $http;
     this.userLogData = {};
     this.$rootScope = $rootScope;
-    console.log("API=",_API_);
+    console.log('LOGIN PAGE!!!');
   }
 
   goToRegistrationPage() {
@@ -14,7 +14,7 @@ class LoginPageController {
   }
 
   goToMainPage() {
-    this.$state.go('mainPage');
+    this.$state.go('homePage');
   }
 
   onLogin(isValid) {
@@ -32,8 +32,12 @@ class LoginPageController {
       .then((response) => {
         console.log('TOKEN=', response.data.token);
         if(response.data.token) {
-          localStorage.setItem('token', response.data.token);
-          this.$rootScope.user = {'logged' : true};
+          let user = {
+            'token' : response.data.token,
+            'logged' : true
+          }
+          localStorage.setItem('user', angular.toJson(user));
+          this.$rootScope.user = user;
 
           this.goToMainPage();
         }

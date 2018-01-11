@@ -4,19 +4,36 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import materialize from 'angular-materialize';
+import SessionService from './service/SessionService';
+import 'angular-ui-router/release/stateEvents';
 //import 'normalize.css';
 
 angular.module('app', [
     uiRouter,
     Common,
     Components,
-    materialize
+    materialize,
+    'ui.router.state.events'
+
   ])
   .config(($locationProvider) => {
     "ngInject";
-    // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
-    // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
 
+  .run(($rootScope, $state, $stateParams, SessionService) => {
+    "ngInject";
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+    
+    $rootScope.$on('$stateChangeStart',
+      (event, toState, toParams, fromState, fromParams) =>
+      {
+        SessionService.checkAccess(event, toState, toParams, fromState, fromParams);
+      }
+    );
+  })
+  .service('SessionService', SessionService)
+
   .component('app', AppComponent);
+

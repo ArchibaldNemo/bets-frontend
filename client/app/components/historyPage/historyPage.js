@@ -15,8 +15,11 @@ let historyPageModule = angular.module('historyPage', [
 
   $stateProvider
     .state('historyPage', {
-      url: '/',
-      component: 'historyPage'
+      url: '/history',
+      component: 'historyPage',
+      data: {
+        'noLogin': false
+      }
     });
 })
 

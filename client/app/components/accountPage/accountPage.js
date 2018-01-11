@@ -15,8 +15,11 @@ let accountPageModule = angular.module('accountPage', [
 
   $stateProvider
     .state('accountPage', {
-      url: '/',
-      component: 'accountPage'
+      url: '/my',
+      component: 'accountPage',
+      data: {
+        'noLogin': false
+      }
     });
 })
 

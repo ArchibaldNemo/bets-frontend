@@ -1,8 +1,8 @@
 <nav class="blue-grey darken-4" role="navigation">
   <div class="nav-wrapper container">
     <a id="logo-container" href="#" class="center brand-logo">
-      <img src="img/logo.png" ng-show="$ctrl.$state.current.name == 'homePage'">
-      <span ng-show="$ctrl.$state.current.name != 'homePage'">ProBet 24</span>
+      <img src="img/logo.png" ng-show="!$ctrl.$rootScope.user.logged">
+      <span ng-show="$ctrl.$rootScope.user.logged">ProBet 24</span>
     </a>
 
     <ul class="left hide-on-med-and-down">
@@ -12,14 +12,13 @@
 
     </ul>
     <ul class="right hide-on-med-and-down">
-      <li ng-show="['homePage','registrationPage'].includes($ctrl.$state.current.name)">
+      <li ng-show="!$ctrl.$rootScope.user.logged">
         <a ng-click="$ctrl.goToPage('registrationPage')"
            class="waves-effect waves-light btn amber darken-2">Регистрация</a>
       </li>
       <li>
-        <a href="login.html"
-           class="white waves-effect waves-yellow btn-flat"
-           ng-show="['homePage','loginPage'].includes($ctrl.$state.current.name)"
+        <a class="white waves-effect waves-yellow btn-flat"
+           ng-show="!$ctrl.$rootScope.user.logged"
            ng-click="$ctrl.goToPage('loginPage')">ВОЙТИ</a>
       </li>
     </ul>
@@ -52,11 +51,11 @@
     </ul>
 
   <ul id="nav-mobile" class="side-nav">
-    <li><a href="#" ng-click="$ctrl.goToPage('loginPage')"
-           ng-show="['homePage','loginPage'].includes($ctrl.$state.current.name)">ВОЙТИ</a>
+    <li><a ng-click="$ctrl.goToPage('loginPage')"
+           ng-show="!$ctrl.$rootScope.user.logged">ВОЙТИ</a>
     </li>
-    <li><a href="#" ng-click="$ctrl.goToPage('registrationPage')"
-           ng-show="['homePage','registrationPage'].includes($ctrl.$state.current.name)">РЕГИСТРАЦИЯ</a>
+    <li><a ng-click="$ctrl.goToPage('registrationPage')"
+           ng-show="!$ctrl.$rootScope.user.logged">РЕГИСТРАЦИЯ</a>
     </li>
     <li><a href="#">О нас</a></li>
     <li><a href="#">Помощь</a></li>

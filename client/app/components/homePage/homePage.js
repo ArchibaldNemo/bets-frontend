@@ -15,8 +15,8 @@ let homePageModule = angular.module('homePage', [
 
   $stateProvider
     .state('homePage', {
-      url: '/',
-      component: 'homePage'
+      url: "/",
+      component: 'homePage',
     });
 })
 

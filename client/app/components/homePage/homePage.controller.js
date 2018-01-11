@@ -1,15 +1,8 @@
 class HomePageController {
-  constructor($state) {
+  constructor($state, $rootScope) {
     'ngInject';
     this.$state = $state;
-  }
-
-  goToLoginPage() {
-    this.$state.go('loginPage');
-  }
-
-  goToRegistrationPage() {
-    this.$state.go('registrationPage');
+    this.$rootScope = $rootScope;
   }
 }
 

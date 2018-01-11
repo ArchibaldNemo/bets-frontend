@@ -7,12 +7,13 @@ class BetsHeaderController {
 
   goToPage(pageName)
   {
+    console.log('PAGE NAME=',pageName);
     this.$state.go(pageName);
   }
 
   logout() {
-    localStorage.removeItem('token');
-    this.$rootScope.user = {'logged' : false};
+    localStorage.removeItem('user');
+    this.$rootScope.user = null;
     this.goToPage('homePage');
   }
 

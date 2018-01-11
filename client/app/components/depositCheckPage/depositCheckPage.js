@@ -15,8 +15,11 @@ let depositCheckPageModule = angular.module('depositCheckPage', [
 
   $stateProvider
     .state('depositCheckPage', {
-      url: '/',
-      component: 'depositCheckPage'
+      url: '/deposit/confirm',
+      component: 'depositCheckPage',
+      data: {
+        'noLogin': false
+      }
     });
 })
 
