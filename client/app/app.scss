@@ -82,6 +82,13 @@ footer .icon { display: inline-block; text-align: center; vertical-align: middle
 .country .leagues ul li { margin: 4px 0; }
 .country .leagues ul li a { color: #666; }
 
+.country .name { opacity: .65; }
+.country.active .name { opacity: 1; }
+.country .leagues ul li a:hover { color: #333; }
+.country .leagues ul li a.active { color: #000; font-weight: bold;}
+.gamelist .gametype.active a { color: #333; text-decoration: none; }
+.gamelist .gametype.active a:hover { color: #000; }
+
 
 .gamelist .gametype { color: white; display: inline-block; height: 40px; line-height: 40px;  padding: 0 15px; }
 .gamelist .gametype:first-child { margin-left: 10px; }
@@ -89,7 +96,7 @@ footer .icon { display: inline-block; text-align: center; vertical-align: middle
 .gamelist .gametype a:hover { color: white; }
 .gamelist .gametype.active { background: white; color: #333; }
 
-.leagues { overflow: hidden; padding: 10px 20px;}
+.leagues {padding: 10px 20px;}
 .league { margin-top: 10px; font-weight: bold; text-transform: uppercase; color: #444; clear: both; border-bottom: 1px dotted #ccc; margin-bottom: 2px; padding-bottom: 10px;}
 
 .games { font-size: .88em; line-height: 40px; border-bottom: 1px dotted #ccc;}
@@ -101,7 +108,7 @@ footer .icon { display: inline-block; text-align: center; vertical-align: middle
 .games .bet { display: inline-block; border: 1px solid #bdbdbd; text-align: center; font-weight: bold; line-height: 1.5em; white-space: nowrap; }
 .games a .bet { color: #333; }
 .games .bet1x2 .bet {  width: 50px; }
-.games .betscore { position: relative; }
+.games .betscore { position: relative; display: inline-block}
 .games .betscore .bet {  width: 120px; font-weight: normal; }
 .games .betscore .bet .material-icons { font-size: 1.5em; margin-left: 0px;}
 
@@ -126,7 +133,7 @@ footer .icon { display: inline-block; text-align: center; vertical-align: middle
 }
 
 
-.betscore .variants { position: absolute; z-index: 1; right: 20px; top: 30px;
+.betscore .variants { position: absolute; z-index: 1; right: 0px; top: 30px;
   box-sizing: border-box; background: #fff; line-height: 24px; width: 222px; padding: 5px 20px 20px; overflow: hidden; border: 1px solid #cfd8dc; margin-bottom: 10px; }
 .betscore .variants .betg { width: 60px; float: left; text-align: center; }
 

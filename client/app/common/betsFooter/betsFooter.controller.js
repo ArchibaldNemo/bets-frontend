@@ -1,6 +1,7 @@
 class BetsFooterController {
-  constructor() {
-    this.name = 'betsFooter';
+  constructor($state) {
+    'ngInject';
+    this.$state = $state;
   }
 }
 

@@ -1,9 +1,11 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homePageComponent from './homePage.component';
+import betItem from './betItem/betItem';
+import countryItem from './countryItem/countryItem';
 
 let homePageModule = angular.module('homePage', [
-  uiRouter
+  uiRouter, betItem, countryItem
 ])
 
 .component('homePage', homePageComponent)

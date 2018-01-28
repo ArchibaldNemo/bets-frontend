@@ -12,7 +12,6 @@ class RegistrationPageController {
   }
 
   onRegister(isValid) {
-    console.log('isValid=',isValid);
     if(!isValid) return;
     this.$http({
       method: "POST",

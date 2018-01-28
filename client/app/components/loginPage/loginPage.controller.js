@@ -6,7 +6,6 @@ class LoginPageController {
     this.$http = $http;
     this.userLogData = {};
     this.$rootScope = $rootScope;
-    console.log('LOGIN PAGE!!!');
   }
 
   goToRegistrationPage() {
@@ -18,7 +17,6 @@ class LoginPageController {
   }
 
   onLogin(isValid) {
-    console.log('userLogData=',this.userLogData);
     if(!isValid) return;
     this.$http({
         method: "POST",

@@ -1,12 +1,12 @@
 <nav class="blue-grey darken-4" role="navigation">
-  <div class="nav-wrapper container">
+  <div class="nav-wrapper container" ng-show="$ctrl.$state.current.name !== 'adminPage'">
     <a id="logo-container" href="#" class="center brand-logo">
       <img src="img/logo.png" ng-show="!$ctrl.$rootScope.user.logged">
       <span ng-show="$ctrl.$rootScope.user.logged">ProBet 24</span>
     </a>
 
     <ul class="left hide-on-med-and-down">
-      <!--li><a href="#"><i class="tiny material-icons">home</i></a></li-->
+      <li><a class='dropdown-button' ng-show="$ctrl.$rootScope.user.logged" ng-click="$ctrl.goToPage('adminPage')"><i class="material-icons">loop</i></a></li>
       <li><a href="#">О НАС</a></li>
       <li><a href="#">ПОМОЩЬ</a></li>
 
@@ -50,62 +50,45 @@
       </ul>
     </ul>
 
-  <ul id="nav-mobile" class="side-nav">
-    <li><a ng-click="$ctrl.goToPage('loginPage')"
-           ng-show="!$ctrl.$rootScope.user.logged">ВОЙТИ</a>
-    </li>
-    <li><a ng-click="$ctrl.goToPage('registrationPage')"
-           ng-show="!$ctrl.$rootScope.user.logged">РЕГИСТРАЦИЯ</a>
-    </li>
-    <li><a href="#">О нас</a></li>
-    <li><a href="#">Помощь</a></li>
-  </ul>
-  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-</div>
-</nav>
-
-<!--nav class="blue-grey darken-4" role="navigation">
-<div class="nav-wrapper container">
-  <a id="logo-container" href="#" class="center brand-logo">ProBet 24</a>
-  <ul class="left hide-on-med-and-down">
-    <!--li><a href="#"><i class="tiny material-icons">home</i></a></li-->
-      <!--li><a href="#">О НАС</a></li>
-      <li><a href="#">ПОМОЩЬ</a></li>
-    </ul>
-
-    <!--ul class="right hide-on-med-and-down">
-      <li class="balance">
-        <div>Баланс: 0 руб.</div>
-        <div>В игре: 1000 руб.</div>
-      </li>
-      <li><a href="deposit.html" class="waves-effect waves-light btn amber darken-2 deposit"><i class="left material-icons">credit_card</i>Пополнить</a></li>
-      <li>
-        <a dropdown
-           class='dropdown-button'
-           href='#' data-activates='dropdown1'
-           data-hover='true'
-           data-belowOrigin="true"
-           data-constrainWidth='false'>МОЙ СЧЕТ<i class="right material-icons">arrow_drop_down</i>
-        </a>
-      </li>
-      <!-- Dropdown Structure -->
-      <!--ul id='dropdown1' class='dropdown-content myaccount'>
-        <li><a href="account.html">Личный кабинет</a></li>
-        <li><a href="history.html">История пари</a></li>
-        <li class="divider"></li>
-        <li><a href="deposit.html">Пополнить счет</a></li>
-        <li><a href="withdraw.html">Вывести средства</a></li>
-        <li class="divider"></li>
-        <li><a href="index.html">Выход</a></li>
-      </ul>
-    </ul>
-
     <ul id="nav-mobile" class="side-nav">
-      <li><a href="#">ВОЙТИ</a></li>
-      <li><a href="#">РЕГИСТРАЦИЯ</a></li>
+      <li><a ng-click="$ctrl.goToPage('loginPage')"
+             ng-show="!$ctrl.$rootScope.user.logged">ВОЙТИ</a>
+      </li>
+      <li><a ng-click="$ctrl.goToPage('registrationPage')"
+             ng-show="!$ctrl.$rootScope.user.logged">РЕГИСТРАЦИЯ</a>
+      </li>
       <li><a href="#">О нас</a></li>
       <li><a href="#">Помощь</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
-</nav-->
+  <div class="nav-wrapper container" ng-show="$ctrl.$state.current.name === 'adminPage'">
+    <ul class="left">
+      <li><a class='dropdown-button' ng-click="$ctrl.goToPage('homePage')"><i class="material-icons">loop</i></a></li>
+      <li><a class='dropdown-button' href='/'>СВОДКА<i class="left material-icons">timeline</i></a></li>
+      <li><a dropdown class='dropdown-button' href='#' data-activates='dropdown11' data-hover='true' data-belowOrigin="true" data-constrainWidth='false'>МАТЧИ<i class="left material-icons">games</i></a></li>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown11' class='dropdown-content myaccount'>
+        <li><a href="#">Все матчи</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Добавить матч</a></li>
+        <li><a ng-click="$ctrl.goToPage('loadDataPage')">Загрузить</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Виды игр</a></li>
+        <li><a href="#">Страны и лиги</a></li>
+        <li><a href="#">Команды</a></li>
+      </ul>
+      <li><a dropdown class='dropdown-button' href='#' data-activates='dropdown2' data-hover='true' data-belowOrigin="true" data-constrainWidth='falce'>СТАВКИ<i class="left material-icons">attach_money</i></a></li>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown2' class='dropdown-content myaccount'>
+        <li><a href="#">Все ставки</a></li>
+        <li><a href="#">Неоплаченные</a></li>
+      </ul>
+    </ul>
+
+    <ul class="right hide-on-med-and-down">
+      <li><a class='dropdown-button' href='#' data-activates='dropdown3' data-hover='true' data-belowOrigin="true" data-constrainWidth='falce'><i class="material-icons">settings</i></a></li>
+      <li><a class='dropdown-button' href='#'>Выход</a></li>
+    </ul>
+  </div>
+</nav>

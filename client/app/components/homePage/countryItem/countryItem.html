@@ -1,0 +1,12 @@
+<div class="country" ng-class="{'active': $ctrl.countryItem.selected}">
+  <div class="name" ng-click="$ctrl.onCountrySelect()">{{$ctrl.countryItem.country}}</div>
+  <div class="leagues" ng-if="$ctrl.countryItem.leagues.length">
+    <ul>
+      <li ng-repeat="leagueItem in $ctrl.countryItem.leagues">
+        <a ng-class="{'active': $ctrl.countryItem.selected}" href="#">
+          {{leagueItem.league}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

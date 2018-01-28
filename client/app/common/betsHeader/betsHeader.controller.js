@@ -16,7 +16,6 @@ class BetsHeaderController {
     this.$rootScope.user = null;
     this.goToPage('homePage');
   }
-
 }
 
 export default BetsHeaderController;

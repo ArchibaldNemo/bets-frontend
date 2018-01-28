@@ -7,6 +7,8 @@ import HistoryPage from './historyPage/historyPage';
 import DepositPage from './depositPage/depositPage';
 import DepositCheckPage from './depositCheckPage/depositCheckPage';
 import WithdrawPage from './withdrawPage/withdrawPage';
+import AdminPage from './admin/adminPage/adminPage';
+import LoadDataPage from './admin/loadDataPage/loadDataPage';
 
 
 let componentModule = angular.module('app.components', [
@@ -17,7 +19,9 @@ let componentModule = angular.module('app.components', [
   HistoryPage,
   DepositPage,
   DepositCheckPage,
-  WithdrawPage
+  WithdrawPage,
+  AdminPage,
+  LoadDataPage
 ])
 
 .name;
