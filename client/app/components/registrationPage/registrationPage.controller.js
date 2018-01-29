@@ -25,7 +25,6 @@ class RegistrationPageController {
               "password": this.userRegData.password},
       headers: { "Content-Type": "application/json" }})
     .then((response) => {
-      console.log('data=',response);
       this.goToLoginPage();
     })
     .catch((error) => console.log('ERROR=', error));

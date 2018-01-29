@@ -9,6 +9,8 @@ import DepositCheckPage from './depositCheckPage/depositCheckPage';
 import WithdrawPage from './withdrawPage/withdrawPage';
 import AdminPage from './admin/adminPage/adminPage';
 import LoadDataPage from './admin/loadDataPage/loadDataPage';
+import BetPage from './bet/betPage/betPage';
+import NoMoneyBetPage from './bet/noMoneyBetPage/noMoneyBetPage';
 
 
 let componentModule = angular.module('app.components', [
@@ -21,7 +23,9 @@ let componentModule = angular.module('app.components', [
   DepositCheckPage,
   WithdrawPage,
   AdminPage,
-  LoadDataPage
+  LoadDataPage,
+  BetPage,
+  NoMoneyBetPage
 ])
 
 .name;

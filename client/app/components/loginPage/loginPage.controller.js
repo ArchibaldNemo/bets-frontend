@@ -28,15 +28,11 @@ class LoginPageController {
         },
         headers: { "Content-Type": "application/json" }})
       .then((response) => {
-        console.log('TOKEN=', response.data.token);
-        if(response.data.token) {
-          let user = {
-            'token' : response.data.token,
-            'logged' : true
-          }
+        if(response.data.user) {
+          console.log('USER==', response.data.user);
+          let user = response.data.user;
           localStorage.setItem('user', angular.toJson(user));
           this.$rootScope.user = user;
-
           this.goToMainPage();
         }
         else {

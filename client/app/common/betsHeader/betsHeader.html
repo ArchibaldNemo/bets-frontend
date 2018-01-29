@@ -1,32 +1,38 @@
 <nav class="blue-grey darken-4" role="navigation">
   <div class="nav-wrapper container" ng-show="$ctrl.$state.current.name !== 'adminPage'">
     <a id="logo-container" href="#" class="center brand-logo">
-      <img src="img/logo.png" ng-show="!$ctrl.$rootScope.user.logged">
-      <span ng-show="$ctrl.$rootScope.user.logged">ProBet 24</span>
+      <img src="img/logo.png" ng-show="!$ctrl.$rootScope.user">
+      <span ng-show="$ctrl.$rootScope.user">ProBet 24</span>
     </a>
 
     <ul class="left hide-on-med-and-down">
-      <li><a class='dropdown-button' ng-show="$ctrl.$rootScope.user.logged" ng-click="$ctrl.goToPage('adminPage')"><i class="material-icons">loop</i></a></li>
+      <li>
+        <a class='dropdown-button'
+           ng-show="$ctrl.$rootScope.user.role === 'admin'"
+           ng-click="$ctrl.goToPage('adminPage')">
+          <i class="material-icons">loop</i>
+        </a>
+      </li>
       <li><a href="#">О НАС</a></li>
       <li><a href="#">ПОМОЩЬ</a></li>
 
     </ul>
     <ul class="right hide-on-med-and-down">
-      <li ng-show="!$ctrl.$rootScope.user.logged">
+      <li ng-show="!$ctrl.$rootScope.user">
         <a ng-click="$ctrl.goToPage('registrationPage')"
            class="waves-effect waves-light btn amber darken-2">Регистрация</a>
       </li>
       <li>
         <a class="white waves-effect waves-yellow btn-flat"
-           ng-show="!$ctrl.$rootScope.user.logged"
+           ng-show="!$ctrl.$rootScope.user"
            ng-click="$ctrl.goToPage('loginPage')">ВОЙТИ</a>
       </li>
     </ul>
 
-    <ul class="right hide-on-med-and-down" ng-show="$ctrl.$rootScope.user.logged">
+    <ul class="right hide-on-med-and-down" ng-show="$ctrl.$rootScope.user">
       <li class="balance">
-        <div>Баланс: 0 руб.</div>
-        <div>В игре: 1000 руб.</div>
+        <div>Баланс: {{$ctrl.$rootScope.user.balanceFree}} руб.</div>
+        <div>В игре: {{$ctrl.$rootScope.user.balanceGame}} руб.</div>
       </li>
       <li><a ng-click="$ctrl.goToPage('depositPage')" class="waves-effect waves-light btn amber darken-2 deposit"><i class="left material-icons">credit_card</i>Пополнить</a></li>
       <li>
@@ -52,10 +58,10 @@
 
     <ul id="nav-mobile" class="side-nav">
       <li><a ng-click="$ctrl.goToPage('loginPage')"
-             ng-show="!$ctrl.$rootScope.user.logged">ВОЙТИ</a>
+             ng-show="!$ctrl.$rootScope.user">ВОЙТИ</a>
       </li>
       <li><a ng-click="$ctrl.goToPage('registrationPage')"
-             ng-show="!$ctrl.$rootScope.user.logged">РЕГИСТРАЦИЯ</a>
+             ng-show="!$ctrl.$rootScope.user">РЕГИСТРАЦИЯ</a>
       </li>
       <li><a href="#">О нас</a></li>
       <li><a href="#">Помощь</a></li>

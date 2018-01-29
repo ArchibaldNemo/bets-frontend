@@ -29,11 +29,11 @@
           <div class="gametype"><a href="">Еще...</a></div>
         </div>
         <div class="leagues white" ng-repeat="leagueItem in $ctrl.currentCountry.leagues">
-          <div class="league">Россия &mdash; {{leagueItem.league}}</div>
+          <div class="league">{{$ctrl.currentCountry.country}} &mdash; {{leagueItem.league}}</div>
           <div class="games">
             <bet-item
               match="matchItem" ng-repeat="matchItem in leagueItem.matches"
-              on-bet-select="$ctrl.onBetSelect(value)">
+              on-bet-select="$ctrl.onBetSelect(bet,matchItem)">
             </bet-item>
           </div>
           <div class="clearfix"></div>

@@ -1,0 +1,33 @@
+<div class="container registration">
+  <div class="section">
+    <div class="row">
+      <div class="col m2">
+      </div>
+      <div class="col s12 m8">
+        <div class="reg-wrapper z-depth-1">
+          <h1>Делайте вашу ставку</h1>
+          <div class="row">
+            <div class="col s12">
+              <p>Игра: {{$ctrl.match.date}} {{$ctrl.match.time}} {{$ctrl.match.team_1}} - {{$ctrl.match.team_2}}<br/>
+                Пари: вид ставки, коэфф</p>
+              Укажите сумму ставки:
+              <div class="input-field inline">
+                <input id="summ" type="text" class="validate">
+                <label for="summ"></label>
+              </div>
+              RUB
+            </div>
+          </div>
+          <div class="row checkrules">
+            <div class="col s12">
+              <input type="checkbox" id="test6" checked="checked" />
+              <label for="test6">Нажимая "Совершить ставку" я подтверждаю, что ознакомлен и согласен с Правилами использования сайта</label>
+              <a href="history.html" class="waves-effect waves-light amber darken-2 btn-large">Совершить ставку</a>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
