@@ -9,10 +9,10 @@
           <div class="row">
             <div class="col s12">
               <p>Игра: {{$ctrl.match.date}} {{$ctrl.match.time}} {{$ctrl.match.team_1}} - {{$ctrl.match.team_2}}<br/>
-                Пари: вид ставки, коэфф</p>
+                Пари: {{$ctrl.betsNames[$ctrl.betType]}}, коэфф. {{$ctrl.match.bets[$ctrl.betType]}}</p>
               Укажите сумму ставки:
               <div class="input-field inline">
-                <input id="summ" type="text" class="validate">
+                <input id="summ" type="text" class="validate" ng-model="$ctrl.betValue">
                 <label for="summ"></label>
               </div>
               RUB
@@ -22,7 +22,7 @@
             <div class="col s12">
               <input type="checkbox" id="test6" checked="checked" />
               <label for="test6">Нажимая "Совершить ставку" я подтверждаю, что ознакомлен и согласен с Правилами использования сайта</label>
-              <a href="history.html" class="waves-effect waves-light amber darken-2 btn-large">Совершить ставку</a>
+              <a href="" ng-click="$ctrl.onBetClick()" class="waves-effect waves-light amber darken-2 btn-large">Совершить ставку</a>
             </div>
           </div>
           </form>

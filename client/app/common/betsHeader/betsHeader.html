@@ -2,7 +2,7 @@
   <div class="nav-wrapper container" ng-show="$ctrl.$state.current.name !== 'adminPage'">
     <a id="logo-container" href="#" class="center brand-logo">
       <img src="img/logo.png" ng-show="!$ctrl.$rootScope.user">
-      <span ng-show="$ctrl.$rootScope.user">ProBet 24</span>
+      <span ng-show="$ctrl.$rootScope.user" ng-click="$ctrl.goToPage('homePage')">ProBet 24</span>
     </a>
 
     <ul class="left hide-on-med-and-down">

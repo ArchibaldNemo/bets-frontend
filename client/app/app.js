@@ -6,6 +6,7 @@ import AppComponent from './app.component';
 import materialize from 'angular-materialize';
 import SessionService from './service/SessionService';
 import DataService from './service/DataService';
+import UserService from './service/UserService';
 import 'angular-ui-router/release/stateEvents';
 //import 'normalize.css';
 
@@ -36,6 +37,7 @@ angular.module('app', [
   })
   .service('SessionService', SessionService)
   .service('DataService', DataService)
+  .service('UserService', UserService)
 
   .directive("filesInput", function() {
     return {

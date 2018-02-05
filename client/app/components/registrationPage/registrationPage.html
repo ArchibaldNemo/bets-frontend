@@ -62,7 +62,7 @@
                          ng-model="$ctrl.userRegData.email"
                          ng-class="{'invalid' : (regForm.email.$error.required || regForm.email.$error.email) && regForm.$submitted,
                                     'valid' : !regForm.email.$error.required &&  !regForm.email.$error.email && regForm.$submitted}">
-                  <label for="email">Email</label>
+                  <label for="email" data-error="{{regForm.email.$error.email ? 'Обязательное поле!' : 'Неправильный формат почтового адреса!'}}">Email</label>
                 </div>
               </div>
               <div class="row">

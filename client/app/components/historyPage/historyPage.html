@@ -6,13 +6,10 @@
       <div class="col s12 m10">
         <div class="reg-wrapper z-depth-1">
           <h1>История пари</h1>
-          <h2>Активные пари</h2>
-          Нет активных пари. <a href="/">Выберите линию и сделайте ставку.</a>
-          <h2>Прошедшие пари</h2>
-          <table>
+          <table style="font-size: 12px;">
             <thead>
             <tr>
-              <th>Дата, время</th>
+              <th>Дата</th>
               <th>Игра</th>
               <th>Ставка x коэф.</th>
               <th>Выигрыш</th>
@@ -20,31 +17,14 @@
               <th>Итог</th>
             </tr>
             </thead>
-
             <tbody>
-            <tr>
-              <td>20/06, 21:30</td>
-              <td>Футбол: СКА-Хабаровск - Арсенал Тула</td>
-              <td>1000 RUB x 6.5</td>
-              <td>6500 RUB</td>
-              <td>точный счет 1:0</td>
-              <td>в игре</td>
-            </tr>
-            <tr>
-              <td>20/06, 21:30</td>
-              <td>Футбол: СКА-Хабаровск - Арсенал Тула</td>
-              <td>10000 RUB x 6.5</td>
-              <td>65000 RUB</td>
-              <td>точный счет 1:1</td>
-              <td>проигрыш</td>
-            </tr>
-            <tr>
-              <td>20/06, 21:30</td>
-              <td>Футбол: СКА-Хабаровск - Арсенал Тула</td>
-              <td>8000 RUB x 6.5</td>
-              <td>52000 RUB</td>
-              <td>точный счет 1:2</td>
-              <td>проигрыш</td>
+            <tr ng-repeat="item in $ctrl.bets">
+              <td>{{item.match.date}}<br/>{{item.match.time}}</td>
+              <td>{{item.match.sport}}:<br/> {{item.match.team_1}} - {{item.match.team_2}}</td>
+              <td>{{item.betValue}} RUB<br/> коэф. {{item.match.bets[item.betType]}}</td>
+              <td>{{+item.betValue * +item.match.bets[item.betType]}} RUB</td>
+              <td>{{$ctrl.betsNames[item.betType]}}</td>
+              <td>{{$ctrl.statusNames[item.status]}}<br/>{{item.comment}}</td>
             </tr>
             </tbody>
           </table>

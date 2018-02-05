@@ -11,6 +11,7 @@ import AdminPage from './admin/adminPage/adminPage';
 import LoadDataPage from './admin/loadDataPage/loadDataPage';
 import BetPage from './bet/betPage/betPage';
 import NoMoneyBetPage from './bet/noMoneyBetPage/noMoneyBetPage';
+import ChangeEmailPasswordPage from './changeEmailPasswordPage/changeEmailPasswordPage';
 
 
 let componentModule = angular.module('app.components', [
@@ -25,7 +26,8 @@ let componentModule = angular.module('app.components', [
   AdminPage,
   LoadDataPage,
   BetPage,
-  NoMoneyBetPage
+  NoMoneyBetPage,
+  ChangeEmailPasswordPage
 ])
 
 .name;

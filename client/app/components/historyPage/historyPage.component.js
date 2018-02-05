@@ -3,7 +3,9 @@ import controller from './historyPage.controller';
 import './historyPage.scss';
 
 let historyPageComponent = {
-  bindings: {},
+  bindings: {
+    match : '<'
+  },
   template,
   controller
 };

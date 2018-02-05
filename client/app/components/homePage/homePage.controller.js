@@ -40,14 +40,12 @@ class HomePageController {
   }
 
   onBetSelect(bet, match) {
-    console.log('BET SELECT!!!===', bet);
-    console.log('Match SELECT!!!===', match);
     if(!this.user) {
       alert('Войдите в систему или зарегестрируйтесь чтобы делать ставки!');
       return;
     }
     if(this.user.balanceFree > 0) {
-      this.$state.go('betPage', {match},{bet_type : bet});
+      this.$state.go('betPage', {match : match, bet_type : bet});
     } else {
       this.$state.go('noMoneyBetPage');
     }

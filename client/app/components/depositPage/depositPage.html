@@ -7,12 +7,12 @@
         <div class="reg-wrapper z-depth-1">
           <h1>Пополнение счета</h1>
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" name="depositForm" novalidate ng-submit="$ctrl.onCreateDeposit(depositForm.$valid)">
               <div class="row">
                 <div class="col s12">
                   1. Выберите платежную систему:
                   <p>
-                    <input name="group1" type="radio" id="test2" checked="checked" />
+                    <input name="group1" type="radio" id="test2" disabled="disabled" />
                     <label class="payment-type" for="test2">QIWI</span><br><span class="desc">Сумма пополнения: от 500 до 50000 RUB в зависимости от типа аккаунта Qiwi</span></label>
                   </p>
                   <p>
@@ -20,7 +20,7 @@
                     <label class="payment-type" for="test4">Банковские карты VISA, Mastercard<br/> <span class="desc">пополнение временно невозможно</span></label>
                   </p>
                   <p>
-                    <input class="with-gap" name="group1" type="radio" id="test3" disabled="disabled"  />
+                    <input class="with-gap" name="group1" type="radio" id="test3" checked="checked"  />
                     <label class="payment-type" for="test3">Яндекс деньги<br/> <span class="desc">пополнение временно невозможно</span></label>
                   </p>
                   <p>
@@ -33,16 +33,28 @@
                 <div class="col s12">
                   2.
                   <div class="input-field inline">
-                    <input id="summ" type="text" class="validate">
-                    <label for="summ">Сумма пополнения</label>
+                    <input id="summ"
+                           name="summ"
+                           type="text"
+                           ng-class="{'invalid' : depositForm.summ.$error.required && depositForm.$submitted,
+                                    'valid' : !depositForm.summ.$error.required && depositForm.$submitted}"
+                           ng-model="$ctrl.depositData.depositValue"
+                           required>
+                    <label style="width: inherit;" for="summ" data-error="Обязательное поле">Сумма пополнения</label>
                   </div>
                   RUB
                 </div>
                 <div class="col s12">
                   3. Телефон для оплаты:
                   <div class="input-field inline">
-                    <input id="summ" type="text" class="validate" value="+7">
-                    <label for="summ">Телефон</label>
+                    <input id="phone"
+                           name="phone"
+                           type="text"
+                           required
+                           ng-model="$ctrl.depositData.phone"
+                           ng-class="{'invalid' : depositForm.phone.$error.required  && depositForm.$submitted,
+                                    'valid' : !depositForm.phone.$error.required &&  depositForm.$submitted}">
+                    <label style="width: inherit;" for="phone" data-error="Обязательное поле">Телефон</label>
                   </div>
                 </div>
               </div>
@@ -51,7 +63,11 @@
                 <div class="col s12">
                   <input type="checkbox" id="test6" checked="checked" />
                   <label for="test6">Нажимая "Пополнить" я подтверждаю, что ознакомлен и согласен с Правилами использования сайта</label>
-                  <a ng-click="$ctrl.goToPage('depositCheckPage')" class="waves-effect waves-light amber darken-2 btn-large">Пополнить счет</a>
+                  <button type="submit" class="waves-effect waves-light amber darken-2 btn-large">
+                  <span>
+                    Пополнить счет
+                  </span>
+                  </button>
                 </div>
               </div>
 

@@ -21,28 +21,27 @@
               <h2>Баланс</h2>
               <div class="col s4 m4 l4 center">
                 <i class="small material-icons">account_balance_wallet</i><br/>
-                Баланс: 0 RUB <br/>
+                Баланс: {{$ctrl.user.balanceFree}} RUB <br/>
                 <a href="deposit.html">пополнить</a> / <a href="withdraw.html">вывести</a><br/>
               </div>
               <div class="col s4 m4 l4 center">
                 <i class="small material-icons">loop</i><br/>
-                В игре: 1000 RUB<br/>
+                В игре: {{$ctrl.user.balanceGame}} RUB<br/>
               </div>
               <div class="col s4 m4 l4 center">
                 <i class="small material-icons">flag</i><br/>
-                Активных пари: <a href="history.html">1</a></div>
+                Активных пари: <a href="" ng-click="$ctrl.goToPage('historyPage')">{{$ctrl.bets.length}}</a></div>
             </div>
 
 
             <div id="test2" class="col s12">
               <h2>Личная информация</h2>
-              <div><span class="info-lable">Фамилия:</span>Константинопольский</div>
-              <div><span class="info-lable">Имя:</span>Константин</div>
-              <div><span class="info-lable">Отчество:</span>Константинович</div>
-              <div><span class="info-lable">Email:</span>example@email.com <a href="#">изменить</a></div>
-              <div><span class="info-lable">Логин:</span>99878548</div>
-              <div><span class="info-lable">Мобильный телефон:</span> +79161234567</div>
-              <div style="margin-top: 30px;"><a href="#">Изменить пароль</a></div>
+              <div><span class="info-lable">Фамилия:</span>{{$ctrl.user.lastName}}</div>
+              <div><span class="info-lable">Имя:</span>{{$ctrl.user.firstName}}</div>
+              <div><span class="info-lable">Отчество:</span>{{$ctrl.user.fathersName}}</div>
+              <div><span class="info-lable">Email:</span>{{$ctrl.user.email}} <a href="#" ng-click="$ctrl.goToPage('changeEmailPasswordPage', {emailChange : true})">изменить</a></div>
+              <div><span class="info-lable">Мобильный телефон:</span> {{$ctrl.user.phone}}</div>
+              <div style="margin-top: 30px;"><a href="#" ng-click="$ctrl.goToPage('changeEmailPasswordPage', {passwordChange : true})">Изменить пароль</a></div>
             </div>
           </div>
         </div>
