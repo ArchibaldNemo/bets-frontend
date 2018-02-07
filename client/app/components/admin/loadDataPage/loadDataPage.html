@@ -17,10 +17,15 @@
                          ng-change="$ctrl.onFileSelected()">
                 </div>
               </div>
-              <div class="row center">
-                <button class="waves-effect waves-light amber darken-2 btn-large" type="submit">
+              <div class="row center" ng-show="$ctrl.showLoadButtons">
+                <button class="waves-effect waves-light amber darken-2 btn-large" ng-click="$ctrl.loadDataFile('add')">
                   <span>
-                    Загрузить
+                    Добавить
+                  </span>
+                </button>
+                <button class="waves-effect waves-light amber darken-2 btn-large" ng-click="$ctrl.loadDataFile('update')">
+                  <span>
+                    Обновить
                   </span>
                 </button>
               </div>

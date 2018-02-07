@@ -6,42 +6,19 @@
           <table class="striped">
             <thead>
             <tr>
-              <th></th>
-              <th>Скинули</th>
-              <th>Пари / скинули</th>
+              <th>Время пополнения</th>
+              <th>Игрок</th>
+              <th>Сервис</th>
+              <th>Сумма пополнения</th>
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-              <td>Сегодня</td>
-              <td>10000 из 12000</td>
-              <td>5 / 4</td>
-            </tr>
-            <tr>
-              <td>Вчера</td>
-              <td>0 из 0</td>
-              <td>0 / 0</td>
-            </tr>
-            <tr>
-              <td>Неделя</td>
-              <td>10000 из 12000</td>
-              <td>5 / 4</td>
-            </tr>
-            <tr>
-              <td>Прошлая неделя</td>
-              <td>100000 из 100000</td>
-              <td>20 / 20</td>
-            </tr>
-            <tr>
-              <td>Месяц</td>
-              <td>10000 из 12000</td>
-              <td>5 / 4</td>
-            </tr>
-            <tr>
-              <td>Прошлый месяц</td>
-              <td>10000 из 12000</td>
-              <td>5 / 4</td>
+            <tr ng-repeat="item in $ctrl.deposits">
+              <td>{{item.createdAt}}</td>
+              <td>{{item.user.lastName}} {{item.user.firstName}} {{item.user.phone}}</td>
+              <td>{{item.paymentType}}</td>
+              <td>{{item.depositValue}}</td>
             </tr>
             </tbody>
           </table>
@@ -55,50 +32,16 @@
               <th>Матч (дата время команды)</th>
               <th>Пари</th>
               <th>Сумма ставки</th>
-              <th><i class="material-icons">attach_money</i></th>
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-              <td>12.12.2017 23:15</td>
-              <td>Иванов Иван +79251234567</td>
-              <td><a href="#">15.12.2017 20:00 Ливерпуль-Челси</a></td>
-              <td>точный счет 1:0</td>
-              <td>4000</td>
-              <td><i class="material-icons">check</i></td>
-            </tr>
-            <tr>
-              <td>12.12.2017 22:04</td>
-              <td>Сергей Шмелев +79000011100</td>
-              <td><a href="#">15.12.2017 20:00 Ливерпуль-Челси</a></td>
-              <td>точный счет 1:0</td>
-              <td>4000</td>
-              <td><i class="material-icons">clear</i></td>
-            </tr>
-            <tr>
-              <td>12.12.2017 22:04</td>
-              <td>Сергей Шмелев +79000011100</td>
-              <td><a href="#">15.12.2017 20:00 Ливерпуль-Челси</a></td>
-              <td>точный счет 1:0</td>
-              <td>4000</td>
-              <td><i class="material-icons">check</i></td>
-            </tr>
-            <tr>
-              <td>12.12.2017 22:04</td>
-              <td>Сергей Шмелев +79000011100</td>
-              <td><a href="#">15.12.2017 20:00 Ливерпуль-Челси</a></td>
-              <td>точный счет 1:0</td>
-              <td>4000</td>
-              <td><i class="material-icons">check</i></td>
-            </tr>
-            <tr>
-              <td>12.12.2017 22:04</td>
-              <td>Сергей Шмелев +79000011100</td>
-              <td><a href="#">15.12.2017 20:00 Ливерпуль-Челси</a></td>
-              <td>точный счет 1:0</td>
-              <td>4000</td>
-              <td><i class="material-icons">check</i></td>
+            <tr ng-repeat="item in $ctrl.bets">
+              <td>{{item.createdAt}}</td>
+              <td>{{item.user.lastName}} {{item.user.firstName}} {{item.phone}}</td>
+              <td><a href="#">{{item.match.date}} {{item.match.time}} {{item.match.team_1}}-{{item.match.team_2}}</a></td>
+              <td>{{$ctrl.betsNames[item.betType]}}</td>
+              <td>{{item.betValue}}</td>
             </tr>
             </tbody>
           </table>

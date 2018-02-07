@@ -8,15 +8,19 @@ class LoadDataPageController {
     this.dataFileList = null;
     this.fileReader = new FileReader();
     this.betsData = [];
-    this.fileReader.onload = () => this.parseDataFromFile(this.fileReader.result);
+    this.showLoadButtons = false;
+    this.fileReader.onload = () => {
+      this.parseDataFromFile(this.fileReader.result);
+      this.showLoadButtons = true;
+    }
   }
 
-  loadDataFile() {
+  loadDataFile(type) {
     this.$http({
         method: "POST",
         url: `${this.hostUrl}/match`,
         dataType: 'json',
-        data: this.betsData,
+        data: {matches : this.betsData, type : type},
         headers: { "Content-Type": "application/json" }})
       .then((response) => {
         console.log('data=',response);

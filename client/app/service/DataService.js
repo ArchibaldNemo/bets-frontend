@@ -68,6 +68,20 @@ class DataService {
       .catch((error) => console.log('ERROR=', error));
   }
 
+  getDeposits() {
+    return this.$http({
+        method: "GET",
+        url: `${this.hostUrl}/deposit`,
+        headers: { "Content-Type": "application/json"/*,
+         'Authorization': this.$rootScope.user.token*/}
+      })
+      .then((response) => {
+        console.log('DATA FROM DATABASE = ',response);
+        return response.data;
+      })
+      .catch((error) => console.log('ERROR=', error));
+  }
+
 }
 
 export default DataService;
