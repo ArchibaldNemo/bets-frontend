@@ -7,6 +7,7 @@ import materialize from 'angular-materialize';
 import SessionService from './service/SessionService';
 import DataService from './service/DataService';
 import UserService from './service/UserService';
+import PaymentService from './service/PaymentService';
 import 'angular-ui-router/release/stateEvents';
 //import 'normalize.css';
 
@@ -38,6 +39,7 @@ angular.module('app', [
   .service('SessionService', SessionService)
   .service('DataService', DataService)
   .service('UserService', UserService)
+  .service('PaymentService', PaymentService)
 
   .directive("filesInput", function() {
     return {
