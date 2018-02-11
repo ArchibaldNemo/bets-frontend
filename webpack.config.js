@@ -7,7 +7,7 @@ var apiHost;
 var setupAPI = function() {
   switch (process.env.NODE_ENV) {
     case 'production' :
-      apiHost = 'https://128.199.44.106:3111';
+      apiHost = 'http://128.199.44.106:3111';
       break;
     case 'development' :
       apiHost = 'http://localhost:3112';
