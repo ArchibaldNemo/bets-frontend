@@ -34,7 +34,7 @@ class DepositPageController {
   onCreateDeposit(formValid) {
     console.log(this.depositData);
     if(!formValid) return;
-    this.createDeposit(this.depositData);
+   //this.createDeposit(this.depositData);
   }
 
   goToPage(pageName)

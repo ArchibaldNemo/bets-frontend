@@ -7,7 +7,19 @@
         <div class="reg-wrapper z-depth-1">
           <h1>Пополнение счета</h1>
           <div class="row">
-            <form class="col s12" name="depositForm" novalidate ng-submit="$ctrl.onCreateDeposit(depositForm.$valid)">
+            <form class="col s12"
+                  name="depositForm"
+                  novalidate
+                  ng-submit="$ctrl.onCreateDeposit(depositForm.$valid)"
+                  action="https://money.yandex.ru/quickpay/confirm.xml"
+                  method="POST">
+              <input type="hidden" name="receiver" value="410013085773025">
+              <input type="hidden" name="quickpay-form" value="shop">
+              <input type="hidden" name="targets" value="Пополнение счета">
+              <input type="hidden" name="paymentType" value="AC">
+              <input type="hidden" name="label" value="$ctrl.user.userId">
+              <input type="hidden" name="successURL" value="https://wearefabricated.com/">
+
               <div class="row">
                 <div class="col s12">
                   1. Выберите платежную систему:
@@ -33,14 +45,14 @@
                 <div class="col s12">
                   2.
                   <div class="input-field inline">
-                    <input id="summ"
-                           name="summ"
+                    <input id="sum"
+                           name="sum"
                            type="text"
-                           ng-class="{'invalid' : depositForm.summ.$error.required && depositForm.$submitted,
-                                    'valid' : !depositForm.summ.$error.required && depositForm.$submitted}"
+                           ng-class="{'invalid' : depositForm.sum.$error.required && depositForm.$submitted,
+                                    'valid' : !depositForm.sum.$error.required && depositForm.$submitted}"
                            ng-model="$ctrl.depositData.depositValue"
                            required>
-                    <label style="width: inherit;" for="summ" data-error="Обязательное поле">Сумма пополнения</label>
+                    <label style="width: inherit;" for="sum" data-error="Обязательное поле">Сумма пополнения</label>
                   </div>
                   RUB
                 </div>
@@ -72,6 +84,27 @@
               </div>
 
             </form>
+            <!--form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+              <input type="hidden" name="receiver" value="410013085773025">
+              <input type="hidden" name="formcomment" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
+              <input type="hidden" name="short-dest" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
+              <input type="hidden" name="label" value="$order_id">
+              <input type="hidden" name="quickpay-form" value="donate">
+              <input type="hidden" name="targets" value="транзакция {order_id}">
+              <input type="hidden" name="sum" value="1" data-type="number">
+              <input type="hidden" name="comment" value="Хотелось бы дистанционного управления.">
+              <input type="hidden" name="wrewrwerewr" value="Хотелось ewrwerwerwerwer дистанционного управления.">
+              <input type="hidden" name="wrewrwerewr" value="Хотелось ewrwerwerwerwer дистанционного управления.">
+              <input type="hidden" name="wrewrwerewr" value="Хотелось ewrwerwerwerwer дистанционного управления.">
+              <input type="hidden" name="need-fio" value="true">
+              <input type="hidden" name="need-email" value="true">
+              <input type="hidden" name="need-phone" value="false">
+              <input type="hidden" name="need-address" value="false">
+              <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>
+              <label><input type="radio" name="paymentType" value="AC">Банковской картой</label>
+              <input type="hidden" name="paymentType" value="AC">
+              <input type="submit" value="Перевести">
+            </form-->
           </div>
         </div>
       </div>

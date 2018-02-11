@@ -11,7 +11,6 @@ class PaymentService {
     return this.$http({
         method: "POST",
         url: 'https://money.yandex.ru/quickpay/confirm.xml',
-        dataType: 'json',
         params: {
           'receiver' : '410013085773025',
           'quickpay-form' : 'shop',
@@ -20,7 +19,7 @@ class PaymentService {
           'sum' : paymentData.depositValue,
           'label' : paymentData.userId
         },
-        headers: { "Content-Type": "application/x-www-form-urlencoded",
+        headers: { "Content-Type": "text/html; charset=utf-8",
                   "Access-Control-Allow-Origin": "*"}})
       .then((response) => {
         console.log('Payment Data===', response);
