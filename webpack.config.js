@@ -7,7 +7,7 @@ var apiHost;
 var setupAPI = function() {
   switch (process.env.NODE_ENV) {
     case 'production' :
-      apiHost = 'https://wearefabricated.com:3111';
+      apiHost = 'https://api.24topbet.com';
       break;
     case 'development' :
       apiHost = 'http://localhost:3112';
