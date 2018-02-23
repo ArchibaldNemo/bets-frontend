@@ -18,7 +18,10 @@ class BetPageController {
   }
 
   onBetClick() {
-    console.log(this.user);
+    if(this.betValue > this.$rootScope.user.balanceFree) {
+      alert('Для совершения ставки с такой суммой недостаточно средств на счете! Пополните счет или уменьшите сумму.');
+      return;
+    }
     let betData =  {
       userId: this.user.userId,
       match: this.match,

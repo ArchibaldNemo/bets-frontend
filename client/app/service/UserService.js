@@ -7,6 +7,19 @@ class UserService {
     this.$rootScope = $rootScope;
   }
 
+  getUserById(userId) {
+    return this.$http({
+        method: "GET",
+        url: `${this.hostUrl}/user/${userId}`,
+        dataType: 'json',
+        headers: { "Content-Type": "application/json"}})
+      .then((response) => {
+        console.log('USER BY ID=', response);
+        return response.data.user;
+      })
+      .catch((error) => alert(error.data));
+  }
+
   updateUser(userId, userData) {
     return this.$http({
         method: "PUT",

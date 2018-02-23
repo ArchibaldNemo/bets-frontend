@@ -1,10 +1,11 @@
 class HomePageController {
-  constructor($state, $rootScope,DataService) {
+  constructor($state, $rootScope,DataService, UserService) {
     'ngInject';
     this.betsData = {};
     this.$state = $state;
     this.$rootScope = $rootScope;
     this.DataService = DataService;
+    this.UserService = UserService;
     this.currentSport = null;
     this.currentCountry = null;
     this.user = this.$rootScope.user;
@@ -12,11 +13,17 @@ class HomePageController {
 
   $onInit() {
     this.loadBetsData();
+    if(this.$rootScope.user) {
+      this.UserService.getUserById(this.$rootScope.user.userId).then((user) => {
+        this.$rootScope.user = user;
+        localStorage.setItem('user', angular.toJson(user));
+        this.user = this.$rootScope.user;
+      });
+    }
   }
 
   loadBetsData() {
     this.DataService.getMatches().then(result => {
-      console.log('RESULT===', result);
       this.betsData = result;
       this.currentSport = this.betsData.sports[0];
       this.currentSport.selected = true;

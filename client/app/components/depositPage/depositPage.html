@@ -10,13 +10,13 @@
             <form class="col s12"
                   name="depositForm"
                   novalidate
-                  ng-submit="$ctrl.onCreateDeposit(depositForm.$valid)"
+
                   action="https://money.yandex.ru/quickpay/confirm.xml"
                   method="POST">
               <input type="hidden" name="receiver" value="410013085773025">
               <input type="hidden" name="quickpay-form" value="shop">
               <input type="hidden" name="targets" value="Пополнение счета">
-              <input type="hidden" name="paymentType" value="AC">
+              <input type="hidden" name="paymentType" value="{{$ctrl.yandexPaymentType}}">
               <input type="hidden" name="label" value="{{$ctrl.user.userId}}">
               <input type="hidden" name="successURL" value="http://wearefabricated.com">
 
@@ -32,8 +32,12 @@
                     <label class="payment-type" for="test4">Банковские карты VISA, Mastercard<br/> <span class="desc">пополнение временно невозможно</span></label>
                   </p>
                   <p>
-                    <input class="with-gap" name="group1" type="radio" id="test3" checked="checked"  />
-                    <label class="payment-type" for="test3">Яндекс деньги<br/> <span class="desc">пополнение временно невозможно</span></label>
+                    <input class="with-gap" name="group1" ng-model="$ctrl.yandexPaymentType" value="AC" type="radio" id="ya-credit" checked="checked"  />
+                    <label class="payment-type" for="ya-credit">Яндекс деньги (с кредитной карты)</label>
+                  </p>
+                  <p>
+                    <input class="with-gap" name="group1" ng-model="$ctrl.yandexPaymentType" value="PC" type="radio" id="ya-money" />
+                    <label class="payment-type" for="ya-money">Яндекс деньги (с Яндекс-Кошелька)</label>
                   </p>
                   <p>
                     <input class="with-gap" name="group1" type="radio" id="test3" disabled="disabled"  />
@@ -56,7 +60,7 @@
                   </div>
                   RUB
                 </div>
-                <div class="col s12">
+                <!--div class="col s12">
                   3. Телефон для оплаты:
                   <div class="input-field inline">
                     <input id="phone"
@@ -68,43 +72,21 @@
                                     'valid' : !depositForm.phone.$error.required &&  depositForm.$submitted}">
                     <label style="width: inherit;" for="phone" data-error="Обязательное поле">Телефон</label>
                   </div>
-                </div>
+                </div-->
               </div>
 
               <div class="row checkrules">
                 <div class="col s12">
                   <input type="checkbox" id="test6" checked="checked" />
                   <label for="test6">Нажимая "Пополнить" я подтверждаю, что ознакомлен и согласен с Правилами использования сайта</label>
-                  <button type="submit" class="waves-effect waves-light amber darken-2 btn-large">
+                  <button type="submit" ng-click="$ctrl.onCreateDeposit(depositForm.$valid)" class="waves-effect waves-light amber darken-2 btn-large">
                   <span>
                     Пополнить счет
                   </span>
                   </button>
                 </div>
               </div>
-
             </form>
-            <!--form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-              <input type="hidden" name="receiver" value="410013085773025">
-              <input type="hidden" name="formcomment" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
-              <input type="hidden" name="short-dest" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
-              <input type="hidden" name="label" value="$order_id">
-              <input type="hidden" name="quickpay-form" value="donate">
-              <input type="hidden" name="targets" value="транзакция {order_id}">
-              <input type="hidden" name="sum" value="1" data-type="number">
-              <input type="hidden" name="comment" value="Хотелось бы дистанционного управления.">
-              <input type="hidden" name="wrewrwerewr" value="Хотелось ewrwerwerwerwer дистанционного управления.">
-              <input type="hidden" name="wrewrwerewr" value="Хотелось ewrwerwerwerwer дистанционного управления.">
-              <input type="hidden" name="wrewrwerewr" value="Хотелось ewrwerwerwerwer дистанционного управления.">
-              <input type="hidden" name="need-fio" value="true">
-              <input type="hidden" name="need-email" value="true">
-              <input type="hidden" name="need-phone" value="false">
-              <input type="hidden" name="need-address" value="false">
-              <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>
-              <label><input type="radio" name="paymentType" value="AC">Банковской картой</label>
-              <input type="hidden" name="paymentType" value="AC">
-              <input type="submit" value="Перевести">
-            </form-->
           </div>
         </div>
       </div>
